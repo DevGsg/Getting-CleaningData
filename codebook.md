@@ -1,0 +1,294 @@
+---
+title: "Codebook"
+date : "30th November 2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_knit$set(root.dir = normalizePath("~/R")) 
+```
+
+
+
+##Dataset
+==================================================================
+**Human Activity Recognition Using Smartphones Dataset**
+**Version 1.0**
+
+
+The experiments have been carried out with a group of 30 volunteers within an age bracket of 19-48 years. Each person performed six activities (WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING) wearing a smartphone (Samsung Galaxy S II) on the waist. Using its embedded accelerometer and gyroscope, we captured 3-axial linear acceleration and 3-axial angular velocity at a constant rate of 50Hz. The experiments have been video-recorded to label the data manually. The obtained dataset has been randomly partitioned into two sets, where 70% of the volunteers was selected for generating the training data and 30% the test data. 
+
+The sensor signals (accelerometer and gyroscope) were pre-processed by applying noise filters and then sampled in fixed-width sliding windows of 2.56 sec and 50% overlap (128 readings/window). The sensor acceleration signal, which has gravitational and body motion components, was separated using a Butterworth low-pass filter into body acceleration and gravity. The gravitational force is assumed to have only low frequency components, therefore a filter with 0.3 Hz cutoff frequency was used. From each window, a vector of features was obtained by calculating variables from the time and frequency domain. See 'features_info.txt' for more details. 
+
+**For each record it is provided:**
+
+
+- Triaxial acceleration from the accelerometer (total acceleration) and the estimated body acceleration.
+- Triaxial Angular velocity from the gyroscope. 
+- A 561-feature vector with time and frequency domain variables. 
+- Its activity label. 
+- An identifier of the subject who carried out the experiment.
+
+**The dataset includes the following files:**
+
+- 'README.txt'
+
+- 'features_info.txt': Shows information about the variables used on the feature vector.
+
+- 'features.txt': List of all features.
+
+- 'activity_labels.txt': Links the class labels with their activity name.
+
+- 'train/X_train.txt': Training set.
+
+- 'train/y_train.txt': Training labels.
+
+- 'test/X_test.txt': Test set.
+
+- 'test/y_test.txt': Test labels.
+
+The following files are available for the train and test data. Their descriptions are equivalent. 
+
+- 'train/subject_train.txt': Each row identifies the subject who performed the activity for each window sample. Its range is from 1 to 30. 
+
+- 'train/Inertial Signals/total_acc_x_train.txt': The acceleration signal from the smartphone accelerometer X axis in standard gravity units 'g'. Every row shows a 128 element vector. The same description applies for the 'total_acc_x_train.txt' and 'total_acc_z_train.txt' files for the Y and Z axis. 
+
+- 'train/Inertial Signals/body_acc_x_train.txt': The body acceleration signal obtained by subtracting the gravity from the total acceleration. 
+
+- 'train/Inertial Signals/body_gyro_x_train.txt': The angular velocity vector measured by the gyroscope for each window sample. The units are radians/second. 
+
+**Notes:** 
+
+- Features are normalized and bounded within [-1,1].
+- Each feature vector is a row on the text file.
+
+For more information about this dataset contact: activityrecognition@smartlab.ws
+
+## Variables and Description
+==================================================================
+### Subject
+
+
+Variable        |   Description
+----------------|-------------------
+subject         |   Subject IDs of the 30 people ranging from 1 to 30
+
+
+
+### Activity 
+
+Variable        |   Description
+----------------|-------------------
+activity        |   Each subject performs six activities as listed below:
+                |   1 WALKING
+                |   2 WALKING_UPSTAIRS
+                |   3 WALKING_DOWNSTAIRS
+                |   4 SITTING
+                |   5 STANDING
+                |   6 LAYING
+                
+### Features
+
+Description :
+
+The features selected for this database come from the accelerometer and gyroscope 3-axial raw signals tAcc-XYZ and tGyro-XYZ. These time domain signals (prefix 't' to denote time) were captured at a constant rate of 50 Hz. Then they were filtered using a median filter and a 3rd order low pass Butterworth filter with a corner frequency of 20 Hz to remove noise. Similarly, the acceleration signal was then separated into body and gravity acceleration signals (tBodyAcc-XYZ and tGravityAcc-XYZ) using another low pass Butterworth filter with a corner frequency of 0.3 Hz. 
+
+Subsequently, the body linear acceleration and angular velocity were derived in time to obtain Jerk signals (tBodyAccJerk-XYZ and tBodyGyroJerk-XYZ). Also the magnitude of these three-dimensional signals were calculated using the Euclidean norm (tBodyAccMag, tGravityAccMag, tBodyAccJerkMag, tBodyGyroMag, tBodyGyroJerkMag). 
+
+Finally a Fast Fourier Transform (FFT) was applied to some of these signals producing fBodyAcc-XYZ, fBodyAccJerk-XYZ, fBodyGyro-XYZ, fBodyAccJerkMag, fBodyGyroMag, fBodyGyroJerkMag. (Note the 'f' to indicate frequency domain signals). 
+
+These signals were used to estimate variables of the feature vector for each pattern:  
+'-XYZ' is used to denote 3-axial signals in the X, Y and Z directions.
+
+
+**Measurements extracted for this project (79 out of the  total 561 feature vectors):**
+
+- mean(): mean
+
+- std(): standard deviation
+
+1.  freqBodyAcc.mean.X                      
+2.  freqBodyAcc.mean.Y          
+3.  freqBodyAcc.mean.Z                      
+4.  freqBodyAcc.meanFreq.X                  
+5.  freqBodyAcc.meanFreq.Y      
+6.  freqBodyAcc.meanFreq.Z                  
+7.  freqBodyAcc.std.X           
+8.  freqBodyAcc.std.Y                       
+9.  freqBodyAcc.std.Z           
+10. freqBodyAccJerk.mean.X      
+11. freqBodyAccJerk.mean.Y                  
+12. freqBodyAccJerk.mean.Z      
+13. freqBodyAccJerk.meanFreq.X  
+14. freqBodyAccJerk.meanFreq.Y              
+15. freqBodyAccJerk.meanFreq.Z  
+16. freqBodyAccJerk.std.X                   
+17. freqBodyAccJerk.std.Y       
+18. freqBodyAccJerk.std.Z                   
+19. freqBodyAccMag.mean         
+20. freqBodyAccMag.meanFreq     
+21. freqBodyAccMag.std                      
+22. freqBodyBodyAccJerkMag.mean             
+23. freqBodyBodyAccJerkMag.meanFreq         
+24. freqBodyBodyAccJerkMag.std  
+25. freqBodyBodyGyroJerkMag.mean            
+26. freqBodyBodyGyroJerkMag.meanFreq
+27. freqBodyBodyGyroJerkMag.std 
+28. freqBodyBodyGyroMag.mean    
+29. freqBodyBodyGyroMag.meanFreq
+30. freqBodyBodyGyroMag.std                 
+31. freqBodyGyro.mean.X                     
+32. freqBodyGyro.mean.Y         
+33. freqBodyGyro.mean.Z                     
+34. freqBodyGyro.meanFreq.X                 
+35. freqBodyGyro.meanFreq.Y     
+36. freqBodyGyro.meanFreq.Z                 
+37. freqBodyGyro.std.X          
+38. freqBodyGyro.std.Y                      
+39. freqBodyGyro.std.Z          
+40. timeBodyAcc.mean.X                     
+41. timeBodyAcc.mean.Y              
+42. timeBodyAcc.mean.Z	                  
+43. timeBodyAcc.std.X           
+44. timeBodyAcc.std.Y                     
+45. timeBodyAcc.std.Z           
+46. timeBodyAccJerk.mean.X                  
+47. timeBodyAccJerk.mean.Y      
+48. timeBodyAccJerk.mean.Z                  
+49. timeBodyAccJerk.std.X       
+50. timeBodyAccJerk.std.Y                   
+51. timeBodyAccJerk.std.Z       
+52. timeBodyAccJerkMag.mean                 
+53. timeBodyAccJerkMag.std      
+54. timeBodyAccMag.mean                     
+55. timeBodyAccMag.std          
+56. timeBodyGyro.mean.X                     
+57. timeBodyGyro.mean.Y         
+58. timeBodyGyro.mean.Z                     
+59. timeBodyGyro.std.X          
+60. timeBodyGyro.std.Y                      
+61. timeBodyGyro.std.Z          
+62. timeBodyGyroJerk.mean.X                 
+63. timeBodyGyroJerk.mean.Y     
+64. timeBodyGyroJerk.mean.Z                 
+65. timeBodyGyroJerk.std.X      
+66. timeBodyGyroJerk.std.Y                  
+67. timeBodyGyroJerk.std.Z      
+68. timeBodyGyroJerkMag.mean                
+69. timeBodyGyroJerkMag.std     
+70. timeBodyGyroMag.mean                    
+71. timeBodyGyroMag.std         
+72. timeGravityAcc.mean.X                   
+73. timeGravityAcc.mean.Y       
+74. timeGravityAcc.mean.Z                   
+75. timeGravityAcc.std.X        
+76. timeGravityAcc.std.Y                    
+77. timeGravityAcc.std.Z        
+78. timeGravityAccMag.mean                  
+79. timeGravityAccMag.std             
+
+##The transformations and work done on the code 
+==================================================================
+*Below is the code as per the run_analysis R script, along with steps and relevant explanation*
+
+
+
+###1. Setting the working directory and loading relevant libraries
+
+```{r}
+setwd("~/R")
+library(dplyr)
+library(data.table)
+```
+
+###2. Reading the test and train files
+
+```{r}
+xtest <- fread("X_test.txt")
+ytest <- fread("y_test.txt")
+xtrain <- fread("X_train.txt")
+ytrain <-  fread("y_train.txt")
+subtest <- fread("subject_test.txt")
+subtrain <- fread("subject_train.txt")
+```
+Using the str() function it can then be seen that the dimensions of the datasets are as follows:
+
+Dataset       |   Structure
+--------------|---------------------
+xtest         |   2947 obs. of  561 variables
+xtrain        |   7352 obs. of  561 variables
+ytest         |   2947 obs. of  1 variable
+ytrain        |   7352 obs. of  1 variable
+subtest       |   2947 obs. of  1 variable
+subtrain      |   7352 obs. of  1 variable
+
+This makes it easier to visualize how the all the datasets should be merged
+
+###3. Combining the test and train file into a single dataframe
+
+```{r}
+xytest <- cbind(subtest,ytest,xtest)
+xytrain <- cbind(subtrain,ytrain,xtrain)
+xy <- rbind(xytest,xytrain)
+```
+
+###4. Reading the features file and extracting mean and std measurements
+
+```{r}
+features <- fread("features.txt")
+pattern <- "mean|std"
+```
+###5. Extracting the 2 columns from features separately, to get the index/numbering and the corresponding names
+
+*featindex is for column numbers to extract mean/std measurements*
+*featname is for the descriptive variable names*
+
+```{r}
+featindex <- features[grepl(pattern,features$V2),1]
+featname <- features[grepl(pattern,features$V2),2]
+```
+
+###6. Converting the combined data.table into a dataframe as we want a vector
+
+```{r}
+xy <- as.data.frame(xy, stringsAsFactors = FALSE)
+```
+
+###7. Unlisting featindex and featname as we want to match it to the columns in xymeanstd
+
+```{r}
+featindex <- unlist(featindex)
+featname <- unlist(featname)
+xymeanstd <- xy[,c(1,2,featindex+2)]
+```
+
+###8. Reading the activity labels file and using subsetting to replace the 2nd column with descriptive activity names
+
+```{r}
+activitylabel <- fread("activity_labels.txt")
+activitylabel <- as.data.frame(activitylabel, stringsAsFactors = FALSE)
+xymeanstd$V1.1 <- activitylabel[xymeanstd$V1.1,2]
+colnames(xymeanstd) <- c("subject","activity", featname)
+```
+
+###9. Using gsub to tidy up the colnames- so t and f is changed to time and freq,while unneccesary brackets and dashes are removed
+
+```{r}
+colnames(xymeanstd) <- gsub("-",".",colnames(xymeanstd))
+colnames(xymeanstd) <- gsub("^t","time",colnames(xymeanstd))
+colnames(xymeanstd) <- gsub("f","freq",colnames(xymeanstd))
+colnames(xymeanstd) <- gsub("[()]","",colnames(xymeanstd))
+```
+
+###10. Using the summarise, across and group by functions in dplyr to obtain a new dataset 
+
+```{r}
+summarydf <- xymeanstd %>%
+  group_by(subject,activity) %>%
+  summarise(across(.cols = (3:79), .fns = mean))
+```
+  
+###11. writing the dataframe to a text file
+```{r}
+write.table(summarydf, file="summary.txt", sep = "\t", row.names = FALSE)
+```
